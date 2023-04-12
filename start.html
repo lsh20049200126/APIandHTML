@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Login</h1>
+<form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="button" value="Login" onclick="validate()">
+</form>
+<p id="error-message"></p>
+<script>
+    function validate() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Perform validation here
+        if (username === "admin" && password === "password") {
+            // Redirect to dashboard page
+            window.location.href = "功能选择.html";
+        } else {
+            // Display error message
+            document.getElementById("error-message").innerHTML = "Invalid username or password.";
+        }
+    }
+</script>
+</body>
+</html>
+<!--在上面的代码中，我们使用 onclick 属性将 validate() 函数与登录按钮关联起来。当用户单击登录按钮时，
+validate() 函数将获取用户名和密码字段的值，并将其与预定义的用户名和密码进行比较。
+如果匹配，则将用户重定向到 功能选择.html 页面，否则将在页面上显示错误消息。-->
